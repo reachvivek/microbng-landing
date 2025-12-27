@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd microbng && npm run build",
+  "devCommand": "cd microbng && npm run dev",
+  "installCommand": "cd microbng && npm install",
+  "outputDirectory": "microbng/.next"
+}
