@@ -29,13 +29,13 @@ export function Hero() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight">
               <span className="text-gray-400 text-2xl sm:text-3xl md:text-4xl font-normal block mb-2">Virtual BNG</span>
-              <span className="block" ref={usersRef}>Scale to <span className="text-[#39ff14] whitespace-nowrap">{Math.round(users)}M+ Users</span></span>
+              <span className="block" ref={usersRef}>Scale to<br /><span className="text-[#39ff14] whitespace-nowrap">{Math.round(users)}M+ Users</span></span>
               <span className="text-3xl sm:text-4xl md:text-5xl text-gray-400 font-normal block">
                 Deploy in Hours
               </span>
             </h1>
 
-            <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl">
+            <p className="text-base md:text-lg text-gray-400 mb-6 max-w-xl mx-auto lg:mx-0">
               Pure software. Zero hardware. Enterprise-grade performance.
             </p>
 

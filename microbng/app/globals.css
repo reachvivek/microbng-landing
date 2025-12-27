@@ -772,12 +772,12 @@ body {
     gap: 0.5rem;
     width: 100%;
     max-width: 100%;
-    padding: 0 1rem;
   }
 
   .hero-buttons > * {
     flex: 1;
     min-width: 0;
+    max-width: 170px;
     height: 48px !important;
     font-size: 0.8125rem !important;
     padding-left: 0.75rem !important;
