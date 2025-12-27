@@ -40,8 +40,8 @@ export function Hero() {
             </p>
 
             <div className="hero-buttons">
-              <GlassButton href="#cta" variant="primary" className="w-[170px] h-[46px] text-sm px-4">
-                Calculate Savings
+              <GlassButton href="#calendly" variant="primary" className="w-[170px] h-[46px] text-sm px-4">
+                Book Demo
               </GlassButton>
               <GlassButton href="https://calendly.com/nixroutetechnologies/new-meeting?month=2025-12" variant="secondary" className="w-[170px] h-[46px] text-sm px-4" target="_blank" rel="noopener noreferrer">
                 Request Callback
