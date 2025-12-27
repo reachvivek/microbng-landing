@@ -10,7 +10,9 @@ export function Navigation() {
 
   const navLinks = [
     { href: "#about", label: "About" },
+    { href: "#architecture", label: "Architecture" },
     { href: "#features", label: "Features" },
+    { href: "#testimonials", label: "Testimonials" },
     { href: "#scalability", label: "Scalability" },
     { href: "#pricing", label: "Pricing" },
     { href: "#why", label: "Why MicroBNG" },

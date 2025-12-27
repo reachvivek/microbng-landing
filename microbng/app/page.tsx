@@ -3,7 +3,9 @@
 import { Navigation } from "@/components/landing/Navigation";
 import { Hero } from "@/components/landing/Hero";
 import { About } from "@/components/landing/About";
+import { Architecture } from "@/components/landing/Architecture";
 import { Features } from "@/components/landing/Features";
+import { Testimonials } from "@/components/landing/Testimonials";
 import { Scalability } from "@/components/landing/Scalability";
 import { Pricing } from "@/components/landing/Pricing";
 import { WhyMicroBNG } from "@/components/landing/WhyMicroBNG";
@@ -20,7 +22,9 @@ export default function Home() {
       <Navigation />
       <div data-animate><Hero /></div>
       <div data-animate><About /></div>
+      <div data-animate><Architecture /></div>
       <div data-animate><Features /></div>
+      <div data-animate><Testimonials /></div>
       <div data-animate><Scalability /></div>
       <div data-animate><Pricing /></div>
       <div data-animate><WhyMicroBNG /></div>
