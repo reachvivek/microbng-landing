@@ -1,0 +1,686 @@
+@import "tailwindcss";
+
+:root {
+  /* Custom neon colors */
+  --accent-neon: #39ff14;
+  --accent-green: #00ff88;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  /* shadcn/ui theme variables with hsl() wrapper for Tailwind v4 */
+  --background: hsl(0 0% 7%); /* #121212 */
+  --foreground: hsl(0 0% 100%); /* white */
+  --card: hsl(0 0% 10%);
+  --card-foreground: hsl(0 0% 100%);
+  --popover: hsl(0 0% 10%);
+  --popover-foreground: hsl(0 0% 100%);
+  --primary: hsl(111 100% 54%); /* #39ff14 neon green */
+  --primary-foreground: hsl(0 0% 0%); /* black text on neon */
+  --secondary: hsl(0 0% 15%);
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(0 0% 15%);
+  --muted-foreground: hsl(0 0% 64%);
+  --accent: hsl(111 100% 54%); /* neon green */
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(0 0% 15%);
+  --input: hsl(0 0% 15%);
+  --ring: hsl(111 100% 54%); /* neon green ring */
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  /* Map CSS variables to Tailwind colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Radius values */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+/* Main Navigation */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.main-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+/* Page container for consistent centering and padding */
+.page-container {
+  width: 100%;
+  max-width: 80rem; /* 1280px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Consistent section spacing */
+.section-spacing {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+  }
+}
+
+/* Section text and button spacing */
+.section-description {
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+}
+
+.section-heading {
+  margin-bottom: 3rem !important;
+}
+
+/* Section vertical padding for consistent spacing */
+.section-padding {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+}
+
+/* Architecture flow card spacing */
+.space-y-4 > * + * {
+  margin-top: 1.5rem !important;
+}
+
+/* Architecture flow card content padding */
+.arch-flow-content {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Core Features section heading spacing */
+.features-heading {
+  margin-bottom: 4rem !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Core Features grid container - wider for larger cards */
+.features-grid-container {
+  max-width: 100rem !important;
+}
+
+/* Core Features grid layout - 3 columns on large screens */
+.features-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Core Features card content padding */
+.feature-card-content {
+  padding: 1.25rem !important;
+}
+
+/* Core Features card consistent height */
+.feature-card {
+  min-height: 180px !important;
+  height: 100% !important;
+}
+
+/* Core Features number badge spacing */
+.feature-number-badge {
+  margin-bottom: 1rem !important;
+}
+
+/* Core Features title spacing */
+.feature-title {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Scalability section header container */
+.scalability-header {
+  margin-bottom: 3.5rem !important;
+  text-align: center !important;
+}
+
+/* Scalability section heading spacing */
+.scalability-heading {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Scalability section subtitle */
+.scalability-subtitle {
+  display: block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* Scalability metrics grid spacing */
+.scalability-metrics-gap {
+  gap: 2rem !important;
+}
+
+/* Scalability metrics section bottom margin */
+.scalability-metrics-bottom {
+  margin-bottom: 3rem !important;
+}
+
+/* Scalability metric card padding */
+.scalability-metric-card {
+  padding: 1.25rem 1.5rem !important;
+  text-align: center !important;
+}
+
+/* Scalability metric number */
+.scalability-metric-number {
+  font-size: 2.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Scalability features grid gap */
+.scalability-features-gap {
+  gap: 1.5rem !important;
+}
+
+/* Scalability features section bottom margin */
+.scalability-features-bottom {
+  margin-bottom: 4rem !important;
+}
+
+/* Scalability feature card padding */
+.scalability-feature-card {
+  padding: 1.5rem !important;
+}
+
+/* Scalability feature title */
+.scalability-feature-title {
+  font-size: 1.125rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Pricing section header container */
+.pricing-header {
+  margin-bottom: 3.5rem !important;
+  text-align: center !important;
+}
+
+/* Pricing section heading spacing */
+.pricing-heading {
+  margin-top: 4rem !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+/* Pricing section subtitle */
+.pricing-subtitle {
+  display: block !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 100% !important;
+}
+
+/* Pricing grid gap */
+.pricing-grid-gap {
+  gap: 2rem !important;
+  grid-auto-rows: 1fr !important;
+}
+
+/* Pricing card - consistent height */
+.pricing-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* Pricing card header */
+.pricing-card-header {
+  padding: 1.75rem 1.75rem 1.25rem 1.75rem !important;
+}
+
+/* Pricing card content */
+.pricing-card-content {
+  padding: 0 1.75rem 1.75rem 1.75rem !important;
+  flex-grow: 1 !important;
+}
+
+/* Pricing price */
+.pricing-price {
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Pricing features list */
+.pricing-features {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.875rem !important;
+}
+
+/* Pricing feature item */
+.pricing-feature-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Pricing card footer - push to bottom */
+.pricing-card-footer {
+  padding: 0 1.75rem 1.75rem 1.75rem !important;
+  margin-top: auto !important;
+}
+
+/* Why MicroBNG section heading spacing */
+.why-heading {
+  margin-top: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Why MicroBNG table styles */
+.why-table-header {
+  padding: 1rem !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+.why-table-cell {
+  padding: 1rem !important;
+}
+
+/* Use Cases section heading spacing */
+.usecases-heading {
+  margin-bottom: 4rem !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Use Cases grid gap */
+.usecases-grid-gap {
+  gap: 1.5rem !important;
+}
+
+/* Use Cases grid layout */
+@media (min-width: 1024px) {
+  .usecases-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* Use Cases card content padding */
+.usecase-card-content {
+  padding: 1.5rem !important;
+}
+
+/* Use Cases number badge spacing */
+.usecase-number-badge {
+  margin-bottom: 0.75rem !important;
+}
+
+/* Use Cases title spacing */
+.usecase-title {
+  margin-bottom: 0.5rem !important;
+}
+
+/* CTA section heading spacing */
+.cta-heading {
+  margin-bottom: 1.5rem !important;
+}
+
+/* CTA buttons container spacing */
+.cta-buttons {
+  gap: 1.5rem !important;
+}
+
+/* Footer section spacing */
+.footer-section {
+  padding-top: 3rem !important;
+  padding-bottom: 1.5rem !important;
+  border-top: 1px solid rgb(31, 41, 55) !important;
+}
+
+/* Footer grid gap */
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+  margin-bottom: 2rem !important;
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Footer column title spacing */
+.footer-column-title {
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Footer links list spacing */
+.footer-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.5rem !important;
+}
+
+/* Footer brand description */
+.footer-brand-desc {
+  margin-top: 1rem !important;
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  border-top: 1px solid rgb(31, 41, 55) !important;
+  padding-top: 1.5rem !important;
+  text-align: center !important;
+}
+
+@media (min-width: 640px) {
+  .page-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #121212;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'SF Pro Display', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Selection color */
+::selection {
+  background: var(--accent-neon);
+  color: #000;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Solid Primary Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #39ff14;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+.btn-primary:hover {
+  background: #33e610;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Glass Button Styles */
+.glass-btn {
+  position: relative;
+  display: inline-block;
+}
+
+.glass-btn-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  color: #ffffff;
+  z-index: 1;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.8s;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.glass-btn:hover .glass-btn-link {
+  letter-spacing: 3px;
+}
+
+.glass-btn-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.8s;
+}
+
+.glass-btn:hover .glass-btn-link::before {
+  transform: skewX(45deg) translateX(200%);
+}
+
+.glass-btn::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.8s;
+  transition-delay: 0s;
+}
+
+.glass-btn:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+.glass-btn::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.8s;
+  transition-delay: 0s;
+}
+
+.glass-btn:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+
+/* Variant colors */
+.glass-btn-primary::before,
+.glass-btn-primary::after {
+  background: #39ff14;
+  box-shadow: 0 0 5px #39ff14,
+              0 0 15px #39ff14,
+              0 0 30px #39ff14,
+              0 0 60px #39ff14;
+}
+
+.glass-btn-secondary::before,
+.glass-btn-secondary::after {
+  background: #2bd2ff;
+  box-shadow: 0 0 5px #2bd2ff,
+              0 0 15px #2bd2ff,
+              0 0 30px #2bd2ff,
+              0 0 60px #2bd2ff;
+}
+
+.glass-btn-accent::before,
+.glass-btn-accent::after {
+  background: #ff1f71;
+  box-shadow: 0 0 5px #ff1f71,
+              0 0 15px #ff1f71,
+              0 0 30px #ff1f71,
+              0 0 60px #ff1f71;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
