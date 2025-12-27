@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 export function useScrollAnimation(threshold = 0.1) {
-  const elementRef = useRef<HTMLElement>(null);
+  const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
