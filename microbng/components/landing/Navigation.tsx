@@ -77,7 +77,7 @@ export function Navigation() {
         </button>
 
         {/* Desktop Get Demo Button */}
-        <GlassButton href="#cta" variant="primary" className="hidden md:block w-[130px] h-[40px] text-sm">
+        <GlassButton href="#calendly" variant="primary" className="hidden md:block w-[130px] h-[40px] text-sm">
           Get Demo
         </GlassButton>
       </div>
@@ -105,7 +105,7 @@ export function Navigation() {
             </a>
           ))}
           <GlassButton
-            href="#cta"
+            href="#calendly"
             variant="primary"
             className="w-[200px] h-[50px] text-lg mt-4"
             onClick={handleLinkClick}

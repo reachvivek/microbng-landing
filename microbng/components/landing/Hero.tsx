@@ -13,15 +13,15 @@ export function Hero() {
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden section-padding">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#39ff14] rounded-full filter blur-[150px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00ff88] rounded-full filter blur-[150px]"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-[#39ff14] rounded-full filter blur-[150px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 md:w-96 md:h-96 bg-[#00ff88] rounded-full filter blur-[150px]"></div>
       </div>
 
       <div className="page-container relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Column: Content */}
-          <div>
-            <div className="mt-4 mb-8">
+          <div className="text-center lg:text-left">
+            <div className="mt-4 mb-6 md:mb-8 flex justify-center lg:justify-start">
               <Badge variant="outline" className="text-[#39ff14] border-[#39ff14]/30 bg-[#39ff14]/5 px-3 py-1 text-xs font-medium">
                 Trusted by 100+ ISPs Worldwide
               </Badge>
@@ -43,14 +43,14 @@ export function Hero() {
               <GlassButton href="#cta" variant="primary" className="w-[170px] h-[46px] text-sm px-4">
                 Calculate Savings
               </GlassButton>
-              <GlassButton href="#about" variant="secondary" className="w-[170px] h-[46px] text-sm px-4">
+              <GlassButton href="https://calendly.com/nixroutetechnologies/new-meeting?month=2025-12" variant="secondary" className="w-[170px] h-[46px] text-sm px-4" target="_blank" rel="noopener noreferrer">
                 Request Callback
               </GlassButton>
             </div>
           </div>
 
           {/* Right Column: Metrics */}
-          <div className="hero-metrics-container">
+          <div className="hero-metrics-container mx-auto lg:mx-0">
             <div className="glass hero-metric-card" ref={costRef}>
               <div className="hero-metric-number">{Math.round(cost)}%</div>
               <div className="hero-metric-label">Cost Reduction</div>

@@ -39,6 +39,26 @@ export function Footer() {
         </div>
         <div className="footer-bottom text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} MicroBNG by Nix Route Technologies</p>
+          <p className="mt-2 text-xs">
+            Crafted by{" "}
+            <a
+              href="https://linkedin.com/in/reachvivek"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#39ff14]/70 hover:text-[#39ff14] transition-colors"
+            >
+              Vivek Singh
+            </a>
+            {" • "}
+            <a
+              href="https://reachvivek.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#39ff14]/70 hover:text-[#39ff14] transition-colors"
+            >
+              Portfolio
+            </a>
+          </p>
         </div>
       </div>
     </footer>

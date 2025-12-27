@@ -4,25 +4,67 @@ import { useEffect, useRef, useState } from "react";
 
 const testimonials = [
   {
-    quote: "MicroBNG reduced our CAPEX by 65% and deployment time from 8 months to 2 weeks. The ROI was immediate.",
+    quote: "We were hemorrhaging budget on vendor lock-in and watching competitors launch faster. The board was losing patience. Three weeks after switching, we deployed two new markets that would've taken us eight months before.",
     author: "Rajesh Kumar",
     role: "CTO",
     company: "FiberNet India",
     metric: "2M+ subscribers"
   },
   {
-    quote: "Scaling to support our growing subscriber base was seamless. No hardware procurement, no vendor delays.",
+    quote: "Every growth spike meant emergency procurement meetings and exec escalations. I was spending more time in vendor calls than building our network. Now I sleep through peak hours.",
     author: "Sarah Chen",
     role: "VP Engineering",
     company: "MetroLink Broadband",
     metric: "1.5M+ subscribers"
   },
   {
-    quote: "The cloud-native architecture allows us to deploy new markets in days instead of months. Game changer for our expansion.",
+    quote: "Our expansion strategy was hostage to 6-month lead times. We'd identify a market opportunity and by the time hardware arrived, competitors had already moved in. That problem just... disappeared.",
     author: "Michael Rodriguez",
     role: "Head of Infrastructure",
     company: "ConnectWave ISP",
     metric: "800K+ subscribers"
+  },
+  {
+    quote: "I was three months from getting fired. Our legacy BNG was collapsing under load and the vendor wanted another million for an upgrade. Took a bet on the migration. Saved my career and the company.",
+    author: "David Thompson",
+    role: "Network Director",
+    company: "SwiftNet Solutions",
+    metric: "1.2M+ subscribers"
+  },
+  {
+    quote: "Peak traffic used to mean war rooms, all-hands, and crossing fingers. Last Diwali we hit 3x normal load. My team was at the holiday party. The system just... handled it.",
+    author: "Priya Sharma",
+    role: "Chief Operations Officer",
+    company: "NetSpeed Telecom",
+    metric: "950K+ subscribers"
+  },
+  {
+    quote: "Maintenance windows at 3 AM, angry customers, revenue loss. Our SLA was a joke. First zero-downtime upgrade, I just stared at the monitoring dashboard in disbelief. Customers didn't even notice.",
+    author: "James Wilson",
+    role: "VP Technology",
+    company: "FiberLink Communications",
+    metric: "1.8M+ subscribers"
+  },
+  {
+    quote: "Twenty years in telecom, I'd never seen a hardware refresh that didn't involve weekend nightmares and recovery plans. Pushed an update last Tuesday afternoon. Grabbed coffee. It was done.",
+    author: "Maria Garcia",
+    role: "Infrastructure Lead",
+    company: "GlobalNet Broadband",
+    metric: "2.5M+ subscribers"
+  },
+  {
+    quote: "Product kept pitching new features but infrastructure was the bottleneck. 'Six months for capacity' became our motto. Now product complains we move too fast. Best problem I've ever had.",
+    author: "Ahmed Hassan",
+    role: "CTO",
+    company: "MegaSpeed ISP",
+    metric: "1.1M+ subscribers"
+  },
+  {
+    quote: "My team's morale was shot. Smart engineers reduced to babysitting hardware and arguing with vendors. They wanted to quit and build things. Now they actually do. Retention went from 60% to 95%.",
+    author: "Lisa Anderson",
+    role: "VP Engineering",
+    company: "StreamLine Networks",
+    metric: "750K+ subscribers"
   }
 ];
 
@@ -69,43 +111,26 @@ export function Testimonials() {
         {/* Infinite Scrolling Testimonials */}
         <div className="testimonials-carousel-container">
           <div className="testimonials-carousel">
-            {/* First set of testimonials */}
-            {testimonials.map((testimonial, index) => (
-              <div key={`first-${index}`} className="testimonial-card-carousel">
-                <div className="testimonial-quote-icon">
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <p className="testimonial-text">{testimonial.quote}</p>
-                <div className="testimonial-author">
-                  <div className="author-info">
-                    <div className="author-name">{testimonial.author}</div>
-                    <div className="author-role">{testimonial.role}</div>
-                    <div className="author-company">{testimonial.company}</div>
+            {/* Render testimonials twice for seamless infinite loop */}
+            {[...Array(2)].map((_, setIndex) => (
+              testimonials.map((testimonial, index) => (
+                <div key={`set-${setIndex}-${index}`} className="testimonial-card-carousel">
+                  <div className="testimonial-quote-icon">
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
                   </div>
-                  <div className="author-metric">{testimonial.metric}</div>
-                </div>
-              </div>
-            ))}
-            {/* Duplicate set for infinite loop */}
-            {testimonials.map((testimonial, index) => (
-              <div key={`second-${index}`} className="testimonial-card-carousel">
-                <div className="testimonial-quote-icon">
-                  <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                </div>
-                <p className="testimonial-text">{testimonial.quote}</p>
-                <div className="testimonial-author">
-                  <div className="author-info">
-                    <div className="author-name">{testimonial.author}</div>
-                    <div className="author-role">{testimonial.role}</div>
-                    <div className="author-company">{testimonial.company}</div>
+                  <p className="testimonial-text">{testimonial.quote}</p>
+                  <div className="testimonial-author">
+                    <div className="author-info">
+                      <div className="author-name">{testimonial.author}</div>
+                      <div className="author-role">{testimonial.role}</div>
+                      <div className="author-company">{testimonial.company}</div>
+                    </div>
+                    <div className="author-metric">{testimonial.metric}</div>
                   </div>
-                  <div className="author-metric">{testimonial.metric}</div>
                 </div>
-              </div>
+              ))
             ))}
           </div>
         </div>

@@ -11,6 +11,7 @@ import { Pricing } from "@/components/landing/Pricing";
 import { WhyMicroBNG } from "@/components/landing/WhyMicroBNG";
 import { UseCases } from "@/components/landing/UseCases";
 import { CTA } from "@/components/landing/CTA";
+import { CalendlySection } from "@/components/landing/CalendlySection";
 import { Footer } from "@/components/landing/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -30,6 +31,7 @@ export default function Home() {
       <div data-animate><WhyMicroBNG /></div>
       <div data-animate><UseCases /></div>
       <div data-animate><CTA /></div>
+      <div data-animate><CalendlySection /></div>
       <Footer />
     </div>
   );

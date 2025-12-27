@@ -12,7 +12,7 @@ export function CTA() {
           See how MicroBNG can transform your network in just 30 minutes
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center cta-buttons">
-          <GlassButton href="mailto:asad@nixroute.aw?subject=MicroBNG Demo Request" variant="primary" className="w-[240px] h-[55px]">
+          <GlassButton href="https://calendly.com/nixroutetechnologies/new-meeting?month=2025-12" variant="primary" className="w-[240px] h-[55px]" target="_blank" rel="noopener noreferrer">
             Schedule Free Demo
           </GlassButton>
           <GlassButton href="#pricing" variant="secondary" className="w-[240px] h-[55px]">
